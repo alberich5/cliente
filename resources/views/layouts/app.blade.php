@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('Comercializacion', 'Comercializacion') }}</title>
+    <title>Comercializacion</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
@@ -102,6 +102,6 @@
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/sweetalert.min.js') }}"></script>
     @yield('js')
-    
+
 </body>
 </html>
