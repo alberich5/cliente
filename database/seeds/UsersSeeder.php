@@ -25,11 +25,7 @@ class UsersSeeder extends Seeder
                 ]
             );
 
-            \DB::table('posts')->insert([
-                'id_usuario' => $id,
-                'nombre_usuario'=>$faker->firstName,
-                'contenido' => $faker->paragraph(rand(2, 5))
-            ]);
+          
         }
     }
 }

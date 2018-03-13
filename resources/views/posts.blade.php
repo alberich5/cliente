@@ -42,10 +42,10 @@
                 <div class="form-group">
                     <div class="col-sm-10">
                       <label for="entrada">Entrada:</label>
-                      <select name="entrada" class="form-control">
-                          <option value="Llamada">Llamada Telefónica</option>
-                          <option value="Correo">Correo Electrónico</option>
-                          <option value="Escrito">Escrito</option>
+                      <select name="id_entrada" class="form-control">
+                        @foreach ($entrada as $en)
+                        <option value="{{ $en->id}}">{{ $en->nombre_entrada}}</option>
+                         @endforeach
                       </select>
                     </div>
                 </div>
@@ -53,19 +53,10 @@
                 <div class="form-group">
                     <div class="col-sm-10">
                       <label for="mes">Mes:</label>
-                      <select name="mes" class="form-control">
-                          <option value="enero">Enero</option>
-                          <option value="febrero">Febrero</option>
-                          <option value="marzo">Marzo</option>
-                          <option value="abril">Abril</option>
-                          <option value="mayo">Mayo</option>
-                          <option value="junio">Junio</option>
-                          <option value="julio">Julio</option>
-                          <option value="agosto">Agosto</option>
-                          <option value="septiembre">Septiembre</option>
-                          <option value="octubre">Octubre</option>
-                          <option value="noviembre">Noviembre</option>
-                          <option value="diciembre">Diciembre</option>
+                      <select name="id_mes" class="form-control">
+                        @foreach ($mes as $m)
+                        <option value="{{ $m->id}}">{{ $m->nombre_mes}}</option>
+                         @endforeach
                       </select>
                     </div>
                 </div>
@@ -94,10 +85,10 @@
                 <div class="form-group">
                     <div class="col-sm-10">
                       <label for="ambito">Ambito:</label>
-                      <select name="ambito" class="form-control">
-                          <option value="privada">Privada</option>
-                          <option value="federal">Federal</option>
-                          <option value="estatal">Estatal</option>
+                      <select name="id_ambito" class="form-control">
+                        @foreach ($ambito as $amb)
+                        <option value="{{ $amb->id}}">{{ $amb->nombre_ambito}}</option>
+                         @endforeach
                       </select>
                     </div>
                 </div>
@@ -105,22 +96,21 @@
                 <div class="form-group">
                     <div class="col-sm-10">
                       <label for="delegacion">Delegacion o Sub Delegacion:</label>
-                      <select name="delegacion" class="form-control">
-                          <option value="valles">Valles Centrales</option>
-                          <option value="huajuapam">Huajuapam de leon</option>
-                          <option value="matias">Matias Romero</option>
-                          <option value="salina">Salina Cruz</option>
-                          <option value="pinotepa">Pinotepa Nacional</option>
+                      <select name="id_delegacion" class="form-control">
+                        @foreach ($delegacion as $dele)
+                        <option value="{{ $dele->id}}">{{ $dele->nombre_delegacion}}</option>
+                         @endforeach
                       </select>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-sm-10">
-                      <label for="codigo">Codigo:</label>
-                      <select name="codigo" class="form-control">
-                          <option value="problemas_operatividad">PROBLEMAS DE OPERATIVIDAD</option>
-                          <option value="mal_comportamiento">MAL COMPORTAMIENTO</option>
+                      <label for="codigo">Codigo:</label>-
+                      <select name="id_codigo" class="form-control">
+                        @foreach ($codigo as $codi)
+                        <option value="{{ $codi->id}}">{{ $codi->nombre_codigo}}</option>
+                         @endforeach
                       </select>
                     </div>
                 </div>
@@ -128,19 +118,10 @@
                 <div class="form-group">
                     <div class="col-sm-10">
                       <label for="codigo_queja">Codigo de Queja:</label>
-                      <select name="codigo_queja" class="form-control">
-                          <option value="mala_atencion_dele">MALA ATENCION DE LA DELEGACIÓN</option>
-                          <option value="abandona_servicio">ABANDONA SU SERVICIO</option>
-                          <option value="mala_atencion">MALA ATENCION</option>
-                          <option value="no_cumple_funciones">NO CUMPLE CON LAS FUNCIONES DE SEGURIDAD</option>
-                          <option value="perdida_confianza">PERDIDA DE CONFIANZA</option>
-                          <option value="problema_alchol">PROBLEMAS DE ALCOHOLISMO</option>
-                          <option value="distracion_celular">DISTRACCION CON EL TELEFONO CELULAR</option>
-                          <option value="exceso_familiaridad">EXCESO DE FAMILIARIDAD</option>
-                          <option value="duerme_horario">DUERME EN SU HORARIO DE SERVICIO</option>
-                          <option value="inputualidad">INPUNTUALIDAD</option>
-                          <option value="mala_actitud">MALA ACTITUD DE SERVICIO</option>
-                          
+                      <select name="id_codigo_queja" class="form-control">
+                        @foreach ($codigoque as $que)
+                        <option value="{{ $que->id}}">{{ $que->nombre_queja}}</option>
+                         @endforeach
                       </select>
                     </div>
                 </div>
@@ -148,10 +129,10 @@
                 <div class="form-group">
                     <div class="col-sm-10">
                       <label for="status">Status:</label>
-                      <select name="status" class="form-control">
-                        <option v-for="statu in status" class="lista">
-                          @{{ statu.nombre}}
-                        </option>
+                      <select name="id_status" class="form-control">
+                        @foreach ($status as $sta)
+                        <option value="{{ $m->id}}">{{ $sta->nombre_status}}</option>
+                         @endforeach
                       </select>
                     </div>
                 </div>

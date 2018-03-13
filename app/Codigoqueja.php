@@ -4,17 +4,18 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Status extends Model
+class Codigoqueja extends Model
 {
-  //Hacemos ferencia ala tabla
-    protected $table='status';
+    //Hacemos ferencia ala tabla
+    protected $table='codigoqueja';
     //hacemos refencia al id 
     protected $primaryKey='id';
 
     public $timestamps=false;
     //le decimos que campos podemos acceder
     protected $fillable =[
-     'nombre_status'
+    'id_codigo',
+     'nombre_queja'
     ];
 
     protected $guarded =[
