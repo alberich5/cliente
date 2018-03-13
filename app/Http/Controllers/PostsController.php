@@ -77,25 +77,9 @@ class PostsController extends Controller
 
 
         $this->validate($request,[
-            'id_usuario'=>'required',
-           'nombre_usuario' => 'required',
-            'fecha' => 'required',
-            'tipo' => 'required',
-            'entrada' => 'required',
-            'empresa' => 'required',
-            'mes' => 'required',
-            'representante' => 'required',
-            'delegacion' => 'required',
-            'domicilio' => 'required',
-            'ambito' => 'required',
-            'codigo' => 'required',
-            'codigo_queja' => 'required',
-            'status' => 'required',
-            'contenido' => 'required',
         ]);
 
         //dd($request->all());
-
         $post=new Post;
         $post->id_usuario=$request->get('id_usuario');
         $post->id_entrada=$request->get('id_entrada');
@@ -116,7 +100,7 @@ class PostsController extends Controller
         $post->save();
 
 
-        return redirect('quejas');
+        return redirect('posts');
     }
 
     public function destroy($id)
