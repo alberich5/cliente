@@ -30,6 +30,11 @@ Route::get('status', 'PostsController@status');
 Route::get('atendidas', 'PostsController@atendida');
 Route::get('pendientes', 'PostsController@pendiente');
 
+
+Route::get('/export-delegaciones', 'ExcelController@exportDelegacion');
+
+
+
 Route::get('howto', function (){
 
     return view('howto');

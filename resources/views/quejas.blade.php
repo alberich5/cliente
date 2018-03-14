@@ -7,8 +7,8 @@
        @endif
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Quejas</div>
+                <div class="panel panel-info">
+                    <div class="panel-heading"><center>AQuejas</center></div>
                     <div class="panel-body">
                         <table class="table table-striped">
                             <thead>
