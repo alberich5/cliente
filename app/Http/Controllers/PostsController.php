@@ -126,7 +126,7 @@ class PostsController extends Controller
         $post->save();
 
 
-        return redirect('posts');
+        return redirect('quejas');
     }
 
     public function destroy($id)
