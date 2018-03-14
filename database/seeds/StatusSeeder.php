@@ -13,10 +13,10 @@ class StatusSeeder extends Seeder
     public function run()
     {
         Status::create([
-            'nombre_codigo' => 'PENDIENTE'
+            'nombre_status' => 'PENDIENTE'
         ]);
         Status::create([
-            'nombre_codigo' => 'ATENDIDO'
+            'nombre_status' => 'ATENDIDO'
         ]);
     }
 }

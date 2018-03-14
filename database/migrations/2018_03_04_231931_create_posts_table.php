@@ -43,11 +43,9 @@ class CreatePostsTable extends Migration
             $table->date('fecha')->nullable();
             $table->string('tipo')->nullable();
             $table->string('entrada')->nullable();
-           
             $table->string('empresa')->nullable();
             $table->string('representante')->nullable();
             $table->text('domicilio')->nullable();
-
             $table->text('contenido')->nullable();
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();

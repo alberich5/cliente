@@ -35,7 +35,19 @@ class PostsController extends Controller
     //funcion para mostrar las quejas
     public function queja()
     {
-        $posts = Post::orderBy('created_at', 'desc')->paginate(10);
+
+
+
+        $posts = Post::leftjoin('mes', 'posts.id_mes', '=', 'mes.id')
+                ->leftjoin('status', 'posts.id_status', '=', 'status.id')
+                ->leftjoin('codigo', 'posts.id_codigo', '=', 'codigo.id')
+                ->leftjoin('codigoqueja', 'posts.id_codigoqueja', '=', 'codigoqueja.id')
+                ->leftjoin('entrada', 'posts.id_entrada', '=', 'entrada.id')
+                ->leftjoin('ambito', 'posts.id_ambito', '=', 'ambito.id')
+                ->leftjoin('delegacion', 'posts.id_delegacion', '=', 'delegacion.id')
+                ->select('posts.fecha','mes.nombre_mes','status.nombre_status','codigo.nombre_codigo','entrada.nombre_entrada','ambito.nombre_ambito','delegacion.nombre_delegacion','posts.empresa','posts.representante','posts.domicilio','posts.contenido','posts.nombre_usuario','codigoqueja.nombre_queja','posts.tipo','posts.id_usuario','posts.id')
+                 ->paginate(10);
+
         return view('quejas',compact("posts"));
     }
     //funcion para mostrar las graficas
@@ -77,9 +89,23 @@ class PostsController extends Controller
 
 
         $this->validate($request,[
+          'id_usuario'=>'required',
+           'nombre_usuario' => 'required',
+            'fecha' => 'required',
+            'tipo' => 'required',
+            'id_entrada' => 'required',
+            'empresa' => 'required',
+            'id_mes' => 'required',
+            'representante' => 'required',
+            'id_delegacion' => 'required',
+            'domicilio' => 'required',
+            'id_ambito' => 'required',
+            'id_codigo' => 'required',
+            'id_status' => 'required',
+            'contenido' => 'required',
         ]);
 
-        //dd($request->all());
+        //dd($request);
         $post=new Post;
         $post->id_usuario=$request->get('id_usuario');
         $post->id_entrada=$request->get('id_entrada');
@@ -89,13 +115,13 @@ class PostsController extends Controller
         $post->id_codigo=$request->get('id_codigo');
         $post->id_codigoqueja=$request->get('id_codigo_queja');
         $post->id_status=$request->get('id_status');
-        $post->nombre_usuario==$request->get('nombre_usuario');
+        $post->nombre_usuario=$request->get('nombre_usuario');
         $post->fecha=$request->get('fecha');
         $post->tipo=$request->get('tipo');
         $post->entrada=$request->get('cantidad');
-        $post->empresa=$request->get('cantidad');
-        $post->representante=$request->get('cantidad');
-        $post->domicilio=$request->get('cantidad');
+        $post->empresa=$request->get('empresa');
+        $post->representante=$request->get('representante');
+        $post->domicilio=$request->get('domicilio');
         $post->contenido=$request->get('contenido');
         $post->save();
 
@@ -112,6 +138,7 @@ class PostsController extends Controller
 
     public function show($id)
     {
+
         $post=Post::findOrFail($id);
 
         return view('posts/editposts',compact('post'));
@@ -124,9 +151,14 @@ class PostsController extends Controller
             'nombre_usuario' => 'required',
             'contenido' => 'required',
         ]);
-        $post = Post::findOrFail($id);
-        $input = $request->all();
-        $post->fill($input)->save();
+
+
+        $post=Post::findOrFail($request->get('id'));
+        $post->empresa=$request->get('empresa');
+        $post->representante=$request->get('representante');
+        $post->contenido=$request->get('contenido');
+        $post->id_status=$request->get('status');
+        $post->update();
 
         return redirect("quejas");
     }

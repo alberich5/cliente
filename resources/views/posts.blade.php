@@ -25,7 +25,7 @@
                 <div class="form-group">
                     <div class="col-sm-10">
                       <label for="fecha">Fecha que recibio la queja:</label>
-                        <input type="date" class="form-control" name="fecha" >
+                        <input type="date" class="form-control" name="fecha" value="<?php echo date("Y-m-d");?>">
                     </div>
                 </div>
 
@@ -131,7 +131,7 @@
                       <label for="status">Status:</label>
                       <select name="id_status" class="form-control">
                         @foreach ($status as $sta)
-                        <option value="{{ $m->id}}">{{ $sta->nombre_status}}</option>
+                        <option value="{{ $sta->id}}">{{ $sta->nombre_status}}</option>
                          @endforeach
                       </select>
                     </div>

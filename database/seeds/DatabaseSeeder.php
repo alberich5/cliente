@@ -16,8 +16,10 @@ class DatabaseSeeder extends Seeder
         $this->call(UsersSeeder::class);
         $this->call(MesSeeder::class);
         $this->call(AmbitoSeeder::class);
-        //$this->call(Delegacion::class);
-        //$this->call(CodigoSeeder::class);
+        $this->call(DeleTableSeeder::class);
+        $this->call(CodigoSeeder::class);
         $this->call(StatusSeeder::class);
+        $this->call(CodiquejaTableSeeder::class);
+        $this->call(EntradaTableSeeder::class);
     }
 }

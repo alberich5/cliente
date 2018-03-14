@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Delegacion;
 
-class Delegacion extends Seeder
+class Delegacionseeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,6 +15,6 @@ class Delegacion extends Seeder
         Delegacion::create([
             'nombre_delegacion' => 'VALLES CENTRALES'
         ]);
-      
+
     }
 }
