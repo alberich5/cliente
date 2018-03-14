@@ -14,7 +14,6 @@
                     </div>
                 @endif
 
-
                 <div class="form-group">
                     <div class="col-sm-10">
                         <input type="hidden" class="form-control" name="id_usuario" value="{{ Auth::user()->id }}">
@@ -143,17 +142,15 @@
                         <input type="text-area" class="form-control" name="contenido" placeholder="Escribe la Queja..." value="{{old('contenido')}}">
                     </div>
                 </div>
-
                 <input type="submit" class="btn btn-primary" value="Guardar" v-on:click="mostrarAlert">
             </form>
 
-
        @endif
-       <!---<div class="row">
+       <div class="row">
           <div class="col-xs-12">
             <pre>@{{$data}}</pre>
           </div>
-        </div>-->
+        </div>
     </div>
 @endsection
 
