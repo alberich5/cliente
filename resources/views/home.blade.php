@@ -16,8 +16,8 @@
                 </div>
             </div>
         <div class="col-md-8 col-md-offset-0">
-            <div class="panel panel-default">
-                <div class="panel-heading">Tus Quejas</div>
+            <div class="panel panel-info">
+                <div class="panel-heading"><center>Tus Quejas</center></div>
                 <div class="panel-body">
                     <table class="table table-striped">
                         <thead>
@@ -25,7 +25,27 @@
                             <tr>
                                 <th>{{$post->nombre_usuario}}
                                     <br>
-                                    {{$post->contenido}}
+                                    Fecha: {{$post->fecha}}
+                                    <br>
+                                    Delegacion: {{$post->nombre_delegacion}}
+                                    <br>
+                                    TIPO:{{$post->tipo}}
+                                    <br>
+                                    Tipo de Entrada:{{$post->nombre_entrada}}
+                                    <br>
+                                    MES:{{$post->nombre_mes}}
+                                    <br>
+                                    EMPRESA:{{$post->empresa}}
+                                    <br>
+                                    REPRESENTANTE:{{$post->representante}}
+                                    <br>
+                                    DOMICILIO:{{$post->domicilio}}
+                                    <br>
+                                    AMBITO:{{$post->nombre_ambito}}
+                                    <br>
+                                    Contenido: {{$post->contenido}}
+                                    <br>
+                                    Status: {{$post->nombre_status}}
                                 </th>
                                 <th>
                                     <a href="http://172.16.0.43:3333/posts/editposts/{{$post->id}}" ><button class="btn btn-primary">Editar</button> </a>
