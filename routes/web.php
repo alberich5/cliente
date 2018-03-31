@@ -31,7 +31,7 @@ Route::get('atendidas', 'PostsController@atendida');
 Route::get('pendientes', 'PostsController@pendiente');
 
 
-Route::get('/export-delegaciones', 'ExcelController@exportDelegacion');
+Route::get('/export-delegaciones', 'ExcelController@exportarDelegacion');
 
 
 

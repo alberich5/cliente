@@ -54,7 +54,8 @@ class PostsController extends Controller
     public function grafica()
     {
 
-        return view('grafica');
+        $delegacion = Delegacion::orderBy('created_at', 'desc')->get();
+        return view('grafica',["delegacion"=>$delegacion]);
     }
 
     //funcion para mostrar filtro

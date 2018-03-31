@@ -63,21 +63,21 @@
                 <div class="form-group">
                     <div class="col-sm-10">
                       <label for="empresa">Empresa:</label>
-                        <input type="text" class="form-control" name="empresa" placeholder="Empresa..." value="{{old('empresa')}}">
+                        <input type="text" class="form-control" name="empresa" placeholder="Empresa..." value="{{old('empresa')}}" required>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-sm-10">
                       <label for="representante">Representante legal:</label>
-                        <input type="text" class="form-control" name="representante" placeholder="Empresa..." value="{{old('representante')}}">
+                        <input type="text" class="form-control" name="representante" placeholder="Empresa..." value="{{old('representante')}}" required>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-sm-10">
                       <label for="domicilio">Domicilio del Servicio:</label>
-                        <input type="text" class="form-control" name="domicilio" placeholder="Empresa..." value="{{old('domicilio')}}">
+                        <input type="text" class="form-control" name="domicilio" placeholder="Empresa..." value="{{old('domicilio')}}" required>
                     </div>
                 </div>
 
@@ -139,7 +139,7 @@
                 <div class="form-group">
                     <div class="col-sm-10">
                       <label for="contenido">Quejas</label>
-                        <input type="text-area" class="form-control" name="contenido" placeholder="Escribe la Queja..." value="{{old('contenido')}}">
+                        <input type="text-area" class="form-control" name="contenido" placeholder="Escribe la Queja..." value="{{old('contenido')}}" required>
                     </div>
                 </div>
                 <input type="submit" class="btn btn-primary" value="Guardar" v-on:click="mostrarAlert">

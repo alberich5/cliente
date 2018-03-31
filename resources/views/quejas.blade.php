@@ -50,7 +50,9 @@
                                 </th>
                                 <th>
                                     @if(Auth::check() && Auth::user()->id == $post->id_usuario || Auth::check() && Auth::user()->rol == 'admin')
+                                    @if('PENDIENTE'  == $post->nombre_status)
                                 <a href="/posts/editposts/{{$post->id}}" ><button class="btn btn-primary">Editar</button> </a>
+                                @endif
                                 </th>
                                 <th>
                                     <!--<a href="/posts/delete/{{$post->id}}" ><button class="btn btn-danger">Delete</button> </a>-->
